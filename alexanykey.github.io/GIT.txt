@@ -1,0 +1,26 @@
+#git init
+git add . "start"
+git commit -a -m "start"
+#git config --global user.name "name"
+#git config --global user.email "mail"
+git remote add origin git@github.com:alexanykey/alexanykey.github.io.git
+git push -u origin master --force
+
+
+
+
+git checkout --orphan latest_branch
+git add -A
+git branch -D master
+git branch -m master
+git log
+git commit -am "commit message"
+git gc --aggressive --prune
+git repack -a -d --depth=250 --window=250
+
+git checkout --orphan tmp-master # create a temporary branch
+git add -A  # Add all files and commit them
+git commit -m 'Add files'
+git branch -D master # Deletes the master branch
+git branch -m master # Rename the current branch to master
+#git push -f origin master # Force push master branch to Git server
